@@ -1,0 +1,14 @@
+node_modules
+*.log
+*.md
+.git
+.gitignore
+Dockerfile
+.dockerignore
+dist/
+build/
+tmp/
+*.tmp
+*.swp
+.env
+

@@ -1,0 +1,404 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(39, 43, 51);
+    color: white;
+}
+
+header {
+    background: linear-gradient(to right, rgb(60, 62, 68), rgb(39, 43, 51));
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+nav a::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: greenyellow;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover {
+    color: greenyellow;
+}
+nav a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 30px;
+    background-color: rgb(39, 43, 51);
+    color: white;
+}
+
+/* .list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 250px);
+    grid-template-rows: auto;
+    gap: 15px;
+    align-items: center;
+    list-style-type: none;
+} */
+.list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 300px); /* По 3 карточки в ряд */
+    grid-gap: 15px;
+    list-style-type: none;
+}
+
+
+
+.card {
+    background-color: rgb(60, 62, 68);
+    height: 420px;
+    width: 250px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.short-card {
+    max-height: 250px;
+    width: 250px;
+}
+
+.content a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    gap: 15px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content a p {
+    font-size: 18px;
+    width: 175px;
+    text-align: left;
+}
+
+.card a:hover h2 {
+    color: greenyellow;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.pagination button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: rgb(60, 62, 68);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    color: greenyellow;
+}
+
+.pagination button:disabled {
+    display: none;
+}
+
+.detail_content {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "image header"
+        "image content";
+    background-color: rgb(39, 43, 51);
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.detail_content img {
+    grid-area: image;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.detail_content .details {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+    gap: 5px;
+}
+
+.detail_content .title {
+    grid-area: header;
+    font-size: 40px;
+    color: greenyellow;
+    text-align: start;
+    padding: 10px;
+}
+
+.episode-detail,
+.location-detail {
+    background-color: rgb(39, 43, 51);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 20px auto;
+    gap: 10px;
+    color: white;
+}
+
+.episode-title,
+.location-title {
+    font-size: 2em;
+    color: greenyellow;
+    margin: 0 0 10px;
+}
+
+.release-date,
+.episode-info,
+.location-type,
+.location-dimension {
+    margin: 5px 0;
+}
+
+.characters,
+.residents {
+    margin-top: 20px;
+}
+
+.characters h2,
+.residents h2 {
+    padding-bottom: 20px;
+}
+
+.character-list,
+.resident-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.character-item,
+.resident-item {
+    flex: 1 1 20%;
+    max-width: 100px;
+    text-align: center;
+}
+
+.character-item img,
+.resident-item img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.footer {
+    background-color: #282c34;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-left p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-right {
+    margin: 10px 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: greenyellow;
+}
+
+/* Медиа-запросы для адаптивного дизайна */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+
+    .pagination {
+        gap: 10px;
+    }
+
+    .pagination button {
+        margin: 5px 0;
+    }
+
+    .detail_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 70%;
+    }
+
+
+    .detail_content .title {
+        font-size: 1.5em;
+    }
+
+    .episode-detail,
+    .location-detail {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .character-item,
+    .resident-item {
+        flex: 1 1 25%;
+        max-width: 80px;
+    }
+
+    .character-item img,
+    .resident-item img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 16px;
+    }
+    .list {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+
+    .detail_content .title {
+        font-size: 1.2em;
+    }
+
+    .episode-title,
+    .location-title {
+        font-size: 1.5em;
+    }
+
+    .character-item,
+    .resident-item {
+        flex: 1 1 50%;
+        max-width: 60px;
+    }
+
+    .character-item img,
+    .resident-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
