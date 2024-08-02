@@ -163,8 +163,3 @@
 
 - Name: Дарья Марасанова
 - Mail: maradasha@mail.ru
-# Rick_And_Morty_Intern_Project
-# Rick_And_Morty_Intern_Project
-# Rick_And_Morty_Intern_Project
-# Rick_And_Morty_Intern_Project
-# Rick_And_Morty_Intern_Project
